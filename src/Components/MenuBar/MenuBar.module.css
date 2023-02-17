@@ -1,0 +1,42 @@
+.navbar{
+    display: flex;
+    list-style: none;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);  
+    height: 50px;
+    justify-content: flex-end;
+}
+
+.navbar a{
+    padding: 15px 8px;
+    flex-basis: 250px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+.navbar a:hover{
+    background-color: #ccc;
+    cursor: pointer;
+    color: purple;
+    color: rgba(255, 255, 255, 0.769)
+}
+.title {
+    font-size: 43px;
+    margin-right: auto;
+    margin-left: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+  }
+
+.MuipPaper-root{
+    color: red;
+    background-color: red;
+}
+
+.MuiTypography-h1 {
+    font-size: 40px;
+}

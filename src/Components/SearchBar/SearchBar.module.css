@@ -1,0 +1,43 @@
+.SearchBar{
+    display: flex;
+    flex: 1;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.SearchBar input{
+    margin: 10px;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 4px solid rgb(254, 254, 254);
+    box-shadow: 0px 1px rgb(119, 109, 109);
+}
+
+.SearchBar input:focus{
+    outline: none;
+    
+}
+
+.SearchBar .SearchBox{
+    margin-top: 20px;
+    border-radius: 5px;
+    flex-basis: 60%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.SearchBar .search:hover{
+    cursor: pointer;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+}

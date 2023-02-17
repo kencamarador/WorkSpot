@@ -1,0 +1,29 @@
+.Title{
+    display: flex;
+    flex-direction: column;
+
+    
+    
+  
+}
+
+h1 {
+    display: flex;
+    flex: 1;
+    font-size: 50px;
+    margin-bottom: 5px;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+h2 {
+    display: flex;
+    font-size: 18px;
+    flex: 1;
+    font-weight: 20;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+

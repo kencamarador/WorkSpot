@@ -1,0 +1,28 @@
+.CreatePage {
+  display: flex;
+  justify-content: center;
+
+}
+
+.taskTitle {
+  display: flex;
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+.taskTitle2 {
+  display: flex;
+  flex: 1;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 25px;
+  
+}
+

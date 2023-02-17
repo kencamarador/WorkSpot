@@ -1,0 +1,49 @@
+
+.list {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+  }
+  
+.grid{
+  display: flex;
+}
+  
+
+.detailsTitle{
+  margin-top: 30px;
+  font-size: 35px;
+}
+
+.jobTitle{
+  margin-top: 20px;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+.payTitle{
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.locationTitle{
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.descriptionTitle{
+  margin-top: 50px;
+  font-size: 20px;
+}
+.emailTitle{
+  margin-top: 300px;
+  font-size: 30px;
+}
+
+.numberTitle{
+
+  font-size: 30px;
+}

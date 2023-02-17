@@ -1,0 +1,11 @@
+.SignupTitle {
+  display: flex;
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
+  padding: 70px 50px 50px 50px;
+  font-size: 45px;
+  font-weight: bold;
+
+}
