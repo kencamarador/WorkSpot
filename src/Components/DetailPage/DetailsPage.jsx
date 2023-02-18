@@ -26,8 +26,8 @@ export default function DetailPage(props) {
   const handleDelete = async () => {
     await jobsService.delete(id);
     const data = await jobsService.getAll();
-    props.updateStudentState(data)
-    console.log('navigate students route')
+    props.updateJobState(data)
+    console.log('navigate Jobs route')
     navigate(`/all jobs`);
 
     
@@ -60,9 +60,15 @@ export default function DetailPage(props) {
                 <div className={styles.numberTitle}>Phone: {job.contactNumber}</div>
 
        
-                <Button variant="contained"onClick = {handleUpdate}>Update</Button>
-                <Button variant="contained"onClick = {handleDelete}>Delete</Button>
-               
+                <Button variant="contained"onClick = {handleUpdate}
+                style={{maxWidth: '170px', backgroundColor: '#008000'}}>update</Button>
+                
+                <Button variant="contained"onClick = {handleDelete}
+                style={{maxWidth: '170px', float: 'right', backgroundColor: '#D70040'}}>Delete</Button>
+                
+       
+
+          
           </div>
         </div>
     

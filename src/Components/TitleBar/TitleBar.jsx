@@ -5,12 +5,11 @@ import Title from '../Title/Title';
 const image_url = 'https://i.ibb.co/PQTMHFV/joanna-kosinska-7-ACu-Hoez-UYk-unsplash-3.jpg'
 
 
-export default function TitleBar() {
+export default function TitleBar(props) {
 
-  const handleSearch = (searchTerm) => {
-    // handle search logic here
-    console.log(`Search term: ${searchTerm}`);
-  };
+  // function searchExecute() {
+  //   props.history.push('/searchresults') 
+  // }
 
     return (
     <>
@@ -21,10 +20,8 @@ export default function TitleBar() {
 
      }}>
     <Title />
-    <SearchBar onSearch={handleSearch} />
+    <SearchBar  />
 
-    
-    
     
     </div>
   </>

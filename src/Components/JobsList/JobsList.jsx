@@ -12,13 +12,13 @@ export default function JobsList(props) {
       <>
     
           {props.jobs.map(job => (
-            <Link className={"link-container"} to={`/jobs/${job._id}`} key={job._id}>
+            <Link className={"link-container"} style={{ textDecoration: 'none' }}  to={`/jobs/${job._id}`} key={job._id}>
   <div className={styles.list}>
     <div className={styles.Grid}>
       <h3>{job.title}</h3>
       <p>{job.description}</p>
       <p>Location: {job.location}</p>
-      <p>Pay: {job.pay}</p>
+      <p>Pay: ${job.pay}/Hour</p>
     </div>
   </div>
 </Link>

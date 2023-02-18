@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { red } from '@mui/material/colors';
+
 
 
 export default function MenuBar(props) {
@@ -23,46 +23,37 @@ export default function MenuBar(props) {
   };
 
   return (
-    <AppBar position="static"
-      style = {{backgroundColor: "#F2F2F2", color:"black"}}>
-        
+    <AppBar position="static" style={{ backgroundColor: "#F2F2F2", color: "black" }}>
       <Toolbar>
-        <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h4" style={{ fontWeight: 600, color: 'black' }} component="div" sx={{ flexGrow: 1 }}>
           WorkSpot
         </Typography>
   
         {props.menuOptions.map((option) =>
-          option.showAuth && (
+          option.showAuth && !option.hasLogoutOption && (
             <Button
               key={option.label}
-
               color="inherit"
               component={Link}
               to={option.label}
-              onClick={option.hasLogoutOption ? props.handleLogout : null}
             >
               {option.label}
             </Button>
           )
         )}
-        <Avatar
-          onClick={handleMenuOpen}
-          sx={{ cursor: 'pointer', marginLeft: 2 }}
-        />
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleMenuClose}
-        >
-          {['Profile', 'Account', 'Dashboard', 'Logout'].map((item) => (
-            <MenuItem key={item} onClick={handleMenuClose}>
-              {item}
-            </MenuItem>
-          ))}
+  
+        <Avatar onClick={handleMenuOpen} style={{backgroundColor: '#5F8575'}} sx={{ cursor: "pointer", marginLeft: 2 }} />
+  
+        <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
+          {props.menuOptions.map((option) =>
+            option.showAuth && option.hasLogoutOption && (
+              <MenuItem key={option.label} onClick={props.handleLogout}>
+                {option.label}
+              </MenuItem>
+            )
+          )}
         </Menu>
       </Toolbar>
     </AppBar>
   );
 }
-
-

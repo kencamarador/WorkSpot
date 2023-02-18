@@ -1,12 +1,15 @@
 const Job = require('../models/job')
+const mongoose = require('mongoose');
 
 function getAll(req, res){
-    Job.find({}, function(err, data){
-        if (err) res.status(404)
-        res.status(200).json(data)
+    Job.find({}).sort({_id: -1}).exec(function(err, data){
+        if (err) {
+            res.status(404).json({error: err})
+        } else {
+            res.status(200).json(data)
+        }
     })
 }
-
 
 
 
@@ -77,6 +80,26 @@ async function update(req, res) {
     })
 }
 
+// async function search(req, res) {
+
+//     results = ".*" + req.query.s + ".*";
+//     let searchResults = []
+//     try {
+//         if(mongoose.Types.ObjectId.isValid(results)){
+//             searchResults = await Job.find({_id: results}).exec();
+//         } else {
+//             searchResults = await Job.find(
+//                 {$or: [
+//                 { "title":  new RegExp(results, 'i')  },
+//                 { "description":  new RegExp(results, 'i')  }
+//             ]}).exec();
+//         }
+//     res.status(200).json(searchResults)  
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// }
+
 
 
 module.exports = {
@@ -84,7 +107,8 @@ module.exports = {
     create,
     show,
     update,
-    delete: deleteJob
+    delete: deleteJob,
+    // search
 
 
 }

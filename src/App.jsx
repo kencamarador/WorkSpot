@@ -39,8 +39,8 @@ class App extends React.Component {
     }
     this.handleLogout = this.handleLogout.bind(this)
     this.setCurrentUser = this.setCurrentUser.bind(this)
-    this.updateStudentListState = this.updateStudentListState.bind(this)
-    this.updateStudentStateAfterDelete = this.updateStudentStateAfterDelete.bind(this)
+    this.updateJobListState = this.updateJobListState.bind(this)
+    this.updateJobStateAfterDelete = this.updateJobStateAfterDelete.bind(this)
     this.getCurrentUser = this.getCurrentUser.bind(this)
   }
 
@@ -53,7 +53,7 @@ class App extends React.Component {
   
    
   }
-  async updateStudentStateAfterDelete()  {
+  async updateJobStateAfterDelete()  {
     const data = await jobsService.getAll()
     console.log(data)
     this.setState({ jobs: data })
@@ -90,7 +90,7 @@ class App extends React.Component {
   }
 
 
-  async updateStudentListState(data) {
+  async updateJobListState(data) {
     this.setState(state => {
       return { jobs: [...state.jobs, data] }
 
@@ -152,7 +152,7 @@ class App extends React.Component {
         element: (
           <>
         
-        <CreatePage updateStudentState={this.updateStudentListState} getCurrentUser={this.getCurrentUser} />
+        <CreatePage updateJobState={this.updateJobListState} getCurrentUser={this.getCurrentUser} />
           </>
   
         )
@@ -173,7 +173,7 @@ class App extends React.Component {
 
       {
         path: '/jobs/:id',
-        element: <DetailsPage updateStudentState={this.updateStudentListState}/>
+        element: <DetailsPage updateJobState={this.updateJobListState}/>
        
         
        
@@ -183,7 +183,7 @@ class App extends React.Component {
         
         element: (
         <>
-        <UpdatePage updateStudentState={this.updateStudentListState} getCurrentUser={this.getCurrentUser} />
+        <UpdatePage updateJobState={this.updateJobListState} getCurrentUser={this.getCurrentUser} />
         </>
         )
       }

@@ -4,6 +4,7 @@ import jobsService from '../../utils/jobsService';
 import styles from './CreatePage.module.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 class CreatePageForm extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class CreatePageForm extends Component {
     
     try {
       const data = await jobsService.create(this.state);
-      this.props.updateStudentState(data)
+      this.props.updateJobState(data)
       //update user variable in state on successful login
       this.setState({ redirect: true});
       console.log("redirecting to all");
@@ -56,7 +57,7 @@ class CreatePageForm extends Component {
   }
     return (
         <>
-        <div className={styles.taskTitle}> Add a Task</div>
+        <div className={styles.taskTitle}> Post a Task</div>
 
         <div className={styles.taskTitle2}>Have your local neighbours complete your job fror you! </div>
         <Box  display="flex"
@@ -134,8 +135,9 @@ class CreatePageForm extends Component {
           /> 
           </div>
         
-        <button className="btn btn-default" disabled={this.isFormInvalid()}>Create</button>
-       
+
+        <Button variant="contained"onClick = {this.handleSubmit} disabled={this.isFormInvalid()}
+                style={{maxWidth: '170px', backgroundColor: '#008000'}}>Add</Button>
       </Box>
       </>
     );

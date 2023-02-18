@@ -1,12 +1,14 @@
-// const BASE_URL='/api/jobs/'
+
+
+
 async function getAll(){
-    const response = await fetch('/api/jobs/')
+    const response = await fetch('http://localhost:3001/api/jobs')
     const data = await response.json()
     return data
 }   
 async function create(item) {
     try {
-        const response = await fetch('/api/jobs/create', {
+        const response = await fetch('http://localhost:3001/api/jobs/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -21,7 +23,7 @@ async function create(item) {
 
 async function show(id) {
     console.log("show function called with id:", id);
-    const response = await fetch(`/api/jobs/${id}`, {
+    const response = await fetch(`http://localhost:3001/api/jobs/${id}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -33,7 +35,7 @@ async function show(id) {
   }
   
 async function deleteJob(id){
-    try{ const response = await fetch(`/api/jobs/${id}`, {
+    try{ const response = await fetch(`http://localhost:3001/api/jobs/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
@@ -64,7 +66,7 @@ async function deleteJob(id){
 
 async function update(id, data) {
   try {
-      const response = await fetch(`/api/jobs/${id}`, {
+      const response = await fetch(`http://localhost:3001/api/jobs/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
